@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "xonsible"
+version = "0.1.0"
+description = "Run blocks of xonsh code on remote hosts over ssh — `with! on(host):`"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = ["xonsh>=0.25"]
+keywords = ["xonsh", "xontrib", "ssh", "remote", "ansible"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["xonsible", "xontrib"]
