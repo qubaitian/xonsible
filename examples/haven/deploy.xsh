@@ -159,6 +159,9 @@ server {
 
     client_max_body_size 100m;
 
+    # extra services on this port (e.g. agent-hub drops agent.conf here)
+    include /etc/nginx/haven.d/*.conf;
+
     location / {
         proxy_pass http://127.0.0.1:3355;
         proxy_http_version 1.1;
