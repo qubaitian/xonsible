@@ -20,9 +20,18 @@ whatever the remote `~/.xonshrc` sets up.
 
 ## Install
 
+xonsible has to go into the Python that runs your xonsh. Install it with
+xonsh's `xpip`, not plain `pip`:
+
 ```bash
-pip install -e /path/to/xonsible      # into the same env as your xonsh (xpip)
+git clone https://github.com/qubaitian/xonsible.git
+xonsh -c 'xpip install -e ./xonsible'
 ```
+
+A plain `pip` or `pip3` usually points at a different Python (Homebrew,
+system), so `import xonsible` still fails inside xonsh afterwards. This is
+always the case with the independent (mamba) installer, which ships its own
+Python.
 
 The remote host needs xonsh too. `bootstrap` installs it with the official
 [independent (mamba) installer](https://xon.sh/install_mamba.html), using
